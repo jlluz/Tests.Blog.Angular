@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
+import { BlogListComponent } from '../app/components/blog-list/blog-list.component';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
+   imports: [BlogListComponent],
+   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
   standalone: true
 })
