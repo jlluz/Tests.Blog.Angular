@@ -16,4 +16,8 @@ export class PostsService {
   public getPosts(): Observable<Array<IPost>> {
     return this._http.get<Array<IPost>>('http://localhost:3000/posts');
   }
+
+  public updatePostLikeCount(post: IPost) : void {
+    this._http.patch<IPost>(`http://localhost:3000/posts/)${post.id}`, { likeCount : post.likeCount});
+  }
 }

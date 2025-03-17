@@ -30,12 +30,14 @@ export class BlogListComponent implements OnInit, OnDestroy {
   }
 
   increaseLike(post: IPost): void {
-    post.likeCount++; // Increase like count
+    post.likeCount++;   // Increase like count
+    this.postService.updatePostLikeCount(post);   
   }
 
   decreaseLike(post: IPost): void {
     if (post.likeCount > 0) {
       post.likeCount--; // Decrease like count but keep it non-negative
+      this.postService.updatePostLikeCount(post);   
     }
   }
 }
