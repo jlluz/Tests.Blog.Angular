@@ -14,9 +14,6 @@ export class PostsService {
   }
 
   public getPosts(): Observable<Array<IPost>> {
-    console.log(this._http.get<Array<IPost>>('http://localhost:3000/posts'));
-    const newLocal = this._http.get<Array<IPost>>('http://localhost:3000/posts');
-    console.log(newLocal);
-    return newLocal;
+    return this._http.get<Array<IPost>>('http://localhost:3000/posts');
   }
 }
